@@ -1,5 +1,13 @@
 # Cast Group Sync
 
+> **Fork of [gmcmicken/cast_group_sync](https://github.com/gmcmicken/cast_group_sync).**
+> Changes here:
+> - Google Nest Hub / Nest Hub Max / Home Hub smart displays are treated as speakers
+>   (they report as video Cast devices, so upstream skipped them as TVs).
+> - Verified with **Spotify** (Spotify Connect started by SpotifyPlus on a Nest speaker):
+>   `media_player.join` adds a Nest Hub Max to the playing session in sync, without
+>   restarting the track (7 Nov 2026, HA 2026.9.4).
+
 Adds a **Synced** media player for every Google Cast speaker and stereo pair (e.g. `media_player.kitchen_nest_synced`) that fixes two problems when playing music to groups of Nest speakers:
 
 - **Every speaker in a group reports the group's playback.** With the built-in Google Cast integration, only the speaker leading a group reports `playing`; the others show `idle` or `off`. The Synced player shows the same state, track, artwork, and position on every speaker the music is playing on, and `group_members` lists them all.
